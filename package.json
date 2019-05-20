@@ -1,0 +1,24 @@
+{
+  "name": "vue-skeleton",
+  "version": "1.0.0",
+  "description": "骨架屏实践",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sumarina/vue-skeleton.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sumarina/vue-skeleton/issues"
+  },
+  "homepage": "https://github.com/Sumarina/vue-skeleton#readme",
+  "devDependencies": {
+    "extract-css-chunks-webpack-plugin": "^4.5.1",
+    "vue-server-renderer": "^2.6.10",
+    "webpack": "^4.32.0"
+  }
+}
