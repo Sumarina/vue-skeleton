@@ -10,7 +10,7 @@ module.exports = {
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
     },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
@@ -88,7 +88,6 @@ module.exports = {
             orderWarning: true
         }),
         new HtmlWebpackPlugin({
-            title:'output management',
             template:'./index.html'
         }),
         new VueLoaderPlugin()
