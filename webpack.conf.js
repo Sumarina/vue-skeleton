@@ -1,15 +1,27 @@
 const path = require('path');
+
 const webpack = require('webpack');
-
-const ExtractCssChunks = require("extract-css-chunks-webpack-plugin")
-
+const HtmlWebpackPlugin=require('html-webpack-plugin');
+const ExtractCssChunks = require("extract-css-chunks-webpack-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
+    mode: 'development',
     entry: './src/main.js',
     output: {
-        path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist',
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        hot: true,
+        port:9090
+    },
+    resolve: {
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js'
+        }
     },
     module: {
         rules: [
@@ -19,11 +31,8 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                use: 'babel-loader',
-                query: {
-                    compact: true,
-                    minified: true
-                }
+                use: 'babel-loader'
+
             },
             {
                 test: /\.css/,
@@ -49,12 +58,39 @@ module.exports = {
                     "css-loader",
                     "sass-loader"
                 ]
+            }, {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000
+                }
+            },
+            {
+                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000
+                }
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000
+                }
             }
         ]
     },
-    plugins: [new ExtractCssChunks({
-        filename: "[name].css",
-        chunkFilename: "[id].css",
-        orderWarning: true
-    })]
+    plugins: [
+        new ExtractCssChunks({
+            filename: "[name].css",
+            chunkFilename: "[id].css",
+            orderWarning: true
+        }),
+        new HtmlWebpackPlugin({
+            title:'output management',
+            template:'./index.html'
+        }),
+        new VueLoaderPlugin()
+    ]
 }
