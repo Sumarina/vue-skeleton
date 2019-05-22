@@ -1,0 +1,11 @@
+@component-namespace m-skeleton{
+    @b wrap{
+        @e nav{
+            @m gray{
+                width:50px;
+                height: 20px;
+                background:#cdcdcd;
+            }
+        }
+    }
+}

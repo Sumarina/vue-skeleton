@@ -35,7 +35,7 @@ module.exports = {
 
             },
             {
-                test: /\.css/,
+                test: /\.css$/,
                 use: [{
                     loader: ExtractCssChunks.loader,
                     options: {
@@ -43,7 +43,8 @@ module.exports = {
                         reloadAll: true, // when desperation kicks in - this is a brute force HMR flag
                     }
                 },
-                    "css-loader"
+                    "css-loader",
+                    'postcss-loader'
                 ]
             },
             {
@@ -56,7 +57,8 @@ module.exports = {
                     }
                 },
                     "css-loader",
-                    "sass-loader"
+                    "sass-loader",
+                    'postcss-loader'
                 ]
             }, {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

@@ -1,11 +1,13 @@
 <template>
-    <div id="app">
-         app vue
-         {{message}}
+    <div id="app" class="m-skeleton">
+         <ul>
+             <li>{{message}}</li>
+         </ul>
     </div>
 </template>
 
 <script>
+import './style.css';
 export default {
     name:'app',
     data(){
@@ -17,5 +19,4 @@ export default {
 </script>
 
 <style>
-
 </style>
