@@ -1,10 +1,22 @@
-@component-namespace m-skeleton{
-    @b wrap{
-        @e nav{
-            @m gray{
-                width:50px;
-                height: 20px;
-                background:#cdcdcd;
+@component-namespace m{
+    @b skeleton{
+        @e header{
+            margin:30px;
+            @m bg{
+                width:480px;
+                height: 200px;
+                background-color:#eee;
+            }
+        }
+        @e container{
+            display: flex;
+            width:480px;
+            margin:30px;
+            @m bg{
+                width:100px;
+                height: 80px;
+                margin:0px 10px;
+                background-color:#eee;
             }
         }
     }

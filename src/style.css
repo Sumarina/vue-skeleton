@@ -1,5 +1,25 @@
 @component-namespace m{
     @b skeleton{
-        color:red;
+        @e header{
+            margin:30px;
+            font-size:20px;
+            @m red{
+                width:480px;
+                height: 200px;
+                background-color:red;
+            }
+        }
+        @e container{
+            display: flex;
+            width:480px;
+            margin:30px;
+            font-size:14px;
+            @m red{
+                width:100px;
+                height: 80px;
+                margin:0px 10px;
+                background-color:red;
+            }
+        }
     }
 }
