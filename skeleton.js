@@ -11,5 +11,5 @@ const renderer = createBundleRenderer(resolve(__dirname, './dist/skeleton.json')
 
 // 把上一步模板完成的内容写入（替换）`index.html`
 renderer.renderToString({}, (err, html) => {
-  fs.writeFileSync('index.html', html, 'utf-8')
+  fs.writeFileSync('./dist/index.html', html, 'utf-8')
 })
